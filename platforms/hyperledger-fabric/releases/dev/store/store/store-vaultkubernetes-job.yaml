@@ -17,7 +17,7 @@ spec:
       component_type: peer
       namespace: store-net    
       images:
-        alpineutils: index.docker.io/hyperledgerlabs/alpine-utils:1.0
+        alpineutils: ghcr.io/hyperledger/alpine-utils:1.0
 
     vault:
       reviewer_service: vault-reviewer
