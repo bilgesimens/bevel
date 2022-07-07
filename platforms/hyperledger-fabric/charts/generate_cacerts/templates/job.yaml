@@ -15,7 +15,7 @@ metadata:
     app.kubernetes.io/managed-by: {{ .Release.Service }}
     app.kubernetes.io/instance: {{ .Release.Name }}
 spec:
-  backoffLimit: 6
+  backoffLimit: 40 
   template:
     metadata:
       labels:
