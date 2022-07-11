@@ -22,7 +22,7 @@ spec:
 
     vault:
       role: vault-role
-      address: http://host.minikube.internal:8200
+      address: http://vault.internal.machine:8200
       authpath: devwarehouse-net-auth
       secretcryptoprefix: secretsv2/data/crypto/peerOrganizations/warehouse-net/ca
       secretcredentialsprefix: secretsv2/data/credentials/warehouse-net/ca/warehouse
