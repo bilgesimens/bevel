@@ -34,7 +34,7 @@ spec:
       storagesize: 512Mi
     vault:
       role: vault-role
-      address: http://host.minikube.internal:8200
+      address: http://vault.internal.machine:8200
       authpath: devwarehouse-net-auth
       secretcert: secretsv2/data/crypto/peerOrganizations/warehouse-net/ca?ca.warehouse-net-cert.pem
       secretkey: secretsv2/data/crypto/peerOrganizations/warehouse-net/ca?warehouse-net-CA.key
