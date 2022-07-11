@@ -37,7 +37,7 @@ spec:
     
     vault:
       role: vault-role
-      address: http://host.minikube.internal:8200
+      address: http://vault.internal.machine:8200
       authpath: devsupplychain-net-auth
       secretmsp: secretsv2/data/crypto/ordererOrganizations/supplychain-net/users/admin/msp
       secrettls: secretsv2/data/crypto/ordererOrganizations/supplychain-net/users/admin/tls
