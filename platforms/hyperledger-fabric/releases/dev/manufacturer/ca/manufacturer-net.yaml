@@ -34,7 +34,7 @@ spec:
       storagesize: 512Mi
     vault:
       role: vault-role
-      address: http://host.minikube.internal:8200
+      address: http://vault.internal.machine:8200
       authpath: devmanufacturer-net-auth
       secretcert: secretsv2/data/crypto/peerOrganizations/manufacturer-net/ca?ca.manufacturer-net-cert.pem
       secretkey: secretsv2/data/crypto/peerOrganizations/manufacturer-net/ca?manufacturer-net-CA.key
