@@ -49,4 +49,4 @@ spec:
     proxy:
       provider: haproxy
       type: peer
-      external_url_suffix: org3ambassador.blockchaincloudpoc.com
+      external_url_suffix: minikube.network
