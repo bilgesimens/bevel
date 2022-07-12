@@ -30,4 +30,4 @@ spec:
       imagesecretname: regcred
       
     ca:
-      subject: /C=US/ST=New York/L=New York/O=Store/CN=ca.store-net.minikube.network
+      subject: /C=US/ST=New York/L=New York/O=Store/CN=ca.store-net
