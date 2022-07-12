@@ -30,4 +30,4 @@ spec:
       imagesecretname: regcred
       
     ca:
-      subject: /C=US/ST=Massachusetts/L=Boston/O=Warehouse/CN=ca.warehouse-net.minikube.network
+      subject: /C=US/ST=Massachusetts/L=Boston/O=Warehouse/CN=ca.warehouse-net
