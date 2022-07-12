@@ -30,4 +30,4 @@ spec:
       imagesecretname: regcred
       
     ca:
-      subject: /C=CH/ST=Zurich/L=Zurich/O=Manufacturer/CN=ca.manufacturer-net.minikube.network
+      subject: /C=CH/ST=Zurich/L=Zurich/O=Manufacturer/CN=ca.manufacturer-net
