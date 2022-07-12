@@ -30,4 +30,4 @@ spec:
       imagesecretname: regcred
       
     ca:
-      subject: /C=GB/ST=London/L=London/O=Carrier/CN=ca.carrier-net.minikube.network
+      subject: /C=GB/ST=London/L=London/O=Carrier/CN=ca.carrier-net
