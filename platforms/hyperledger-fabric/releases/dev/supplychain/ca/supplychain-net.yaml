@@ -48,4 +48,4 @@ spec:
     proxy:
       provider: haproxy
       type: orderer
-      external_url_suffix: minikube.network
+      external_url_suffix:  
