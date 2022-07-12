@@ -30,4 +30,4 @@ spec:
       imagesecretname: regcred
       
     ca:
-      subject: /C=US/ST=Massachusetts/L=Boston/O=Warehouse/CN=ca.warehouse-net.org5ambassador.blockchaincloudpoc.com
+      subject: /C=US/ST=Massachusetts/L=Boston/O=Warehouse/CN=ca.warehouse-net.minikube.network
