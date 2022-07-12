@@ -30,4 +30,4 @@ spec:
       imagesecretname: regcred
       
     ca:
-      subject: /C=GB/ST=London/L=London/O=Orderer/CN=ca.supplychain-net.org1ambassador.blockchaincloudpoc.com
+      subject: /C=GB/ST=London/L=London/O=Orderer/CN=ca.supplychain-net.minikube.network
