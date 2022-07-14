@@ -44,7 +44,7 @@ spec:
       servicetype: ClusterIP
       ports:
         tcp:
-          port: 443
+          port: 7054
     proxy:
       provider: haproxy
       type: orderer
