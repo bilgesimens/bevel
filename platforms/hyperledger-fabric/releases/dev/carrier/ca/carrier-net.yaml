@@ -45,7 +45,7 @@ spec:
       servicetype: ClusterIP
       ports:
         tcp:
-          port: 7054
+          port: 443
     proxy:
       provider: haproxy
       type: peer
