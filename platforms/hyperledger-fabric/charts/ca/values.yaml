@@ -90,7 +90,7 @@ service:
       nodeport:
       #Provide tcp cluster IP port to be exposed for ca server
       #Eg. clusteripport: 7054
-      clusteripport: 7054
+      clusteripport: 443
 
 annotations:
   #Extra annotations wanted
