@@ -64,7 +64,7 @@ spec:
       component_country: UK
       component_state: London
       component_location: London
-      ca_url: ca.supplychain-net
+      ca_url: ca.supplychain-net:443
 
     orderers:
       name: orderer1-orderer2-orderer3-
