@@ -20,6 +20,7 @@ spec:
       proxy: haproxy
     annotations:  
       service:
+        - example1: example2
       pvc:
       deployment:
     replicaCount: 1
