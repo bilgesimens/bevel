@@ -21,6 +21,7 @@ spec:
       annotations:
     annotations:  
       service:
+        - example1: example2
       pvc:
  
     server:
