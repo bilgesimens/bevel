@@ -137,7 +137,7 @@ registry:
   # Do not edit this value
   identities:
      - name: {{ $.Values.server.admin }}
-       pass: {{ $.Values.server.admin }}pw
+       pass: {{ $.Values.server.admin }}
        type: client
        affiliation: ""
        attrs:
