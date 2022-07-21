@@ -1,0 +1,84 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: store-net-ca-tools
+  namespace: store-net
+  annotations:
+    fluxcd.io/automated: "false"
+spec:
+  releaseName: store-net-ca-tools
+  chart:
+    git: https://github.com/bilgesimens/bevel.git
+    ref: local
+    path: platforms/hyperledger-fabric/charts/catools
+  values:
+    metadata:
+      namespace: store-net
+      name: ca-tools
+      component_type: peer
+      org_name: store
+      proxy: haproxy
+    annotations:  
+      service:
+        - example1: example2
+      pvc:
+      deployment:
+    replicaCount: 1
+
+    image:
+      repository: hyperledger/fabric-ca-tools
+      tag: 1.2.1
+      pullPolicy: IfNotPresent
+      alpineutils: index.docker.io/hyperledgerlabs/alpine-utils:1.0
+      
+    storage:
+      storageclassname: storesc
+      storagesize: 512Mi
+    
+    vault:
+      role: vault-role
+      address: http://vault.internal.machine:8200
+      authpath: devstore-net-auth
+      secretmsp: secret/data/crypto/peerOrganizations/store-net/users/admin/msp
+      secrettls: secret/data/crypto/peerOrganizations/store-net/users/admin/tls
+      secretorderer: secret/data/crypto/peerOrganizations/store-net/orderers
+      secretpeer: secret/data/crypto/peerOrganizations/store-net/peers
+      secretpeerorderertls: secret/data/crypto/peerOrganizations/store-net/orderer/tls
+      secretambassador: secret/data/crypto/peerOrganizations/store-net/ambassador
+      secretcert: secret/data/crypto/peerOrganizations/store-net/ca?ca.store-net-cert.pem
+      secretkey: secret/data/crypto/peerOrganizations/store-net/ca?store-net-CA.key
+      secretcouchdb: secret/data/credentials/store-net/couchdb/store
+      secretconfigfile: secret/data/crypto/peerOrganizations/store-net/msp/config
+      serviceaccountname: vault-auth
+      imagesecretname: regcred
+    
+    healthcheck: 
+      retries: 10
+      sleepTimeAfterError: 2
+
+    
+    org_data:
+      external_url_suffix: svc.cluster.local
+      component_subject: O=Store,OU=Store,L=40.73/-74/New York,C=US
+      cert_subject: O=Store/OU=Store/L=40.73,-74,New York/C=US
+      component_country: US
+      component_state: New York
+      component_location: New York
+      ca_url: ca.store-net:443
+
+    orderers:
+      name: orderer1-orderer2-orderer3-
+    orderers_info:
+      - name: orderer1
+        path: "certs/orderer1-ca.crt"
+      - name: orderer2
+        path: "certs/orderer2-ca.crt"
+      - name: orderer3
+        path: "certs/orderer3-ca.crt"
+
+    peers:
+      name: peer0,-      
+    peer_count: "1"
+
+    checks:
+      refresh_cert_value: False
