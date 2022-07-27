@@ -1,0 +1,48 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: anchorpeer-allchannel-store
+  namespace: store-net
+  annotations:
+    fluxcd.io/automated: "false"
+spec:
+  releaseName: anchorpeer-allchannel-store
+  chart:
+    git: https://github.com/bilgesimens/bevel.git
+    ref: local
+    path: platforms/hyperledger-fabric/charts/anchorpeer
+  values:
+    metadata:
+      namespace: store-net
+      images:
+        fabrictools: hyperledger/fabric-tools:2.2.2
+        alpineutils: index.docker.io/hyperledgerlabs/alpine-utils:1.0
+
+    peer:
+      name: peer0
+      address: peer0.store-net:7051
+      localmspid: storeMSP
+      loglevel: debug
+      tlsstatus: true
+
+    vault:
+      role: vault-role
+      address: http://vault.internal.machine:8200
+      authpath: localstore-net-auth
+      adminsecretprefix: secret/data/crypto/peerOrganizations/store-net/users/admin
+      orderersecretprefix: secret/data/crypto/peerOrganizations/store-net/orderer
+      serviceaccountname: vault-auth
+      imagesecretname: regcred
+
+    channel:
+      name: allchannel      
+    orderer:
+      address: orderer1.supplychain-net:7050
+    anchorstx: |-
+      CrECChgKFggCGgYIsumElwYiCmFsbGNoYW5uZWwSlAIKkQIKCmFsbGNoYW5uZWwSYRJfCgtBcHBs
+      aWNhdGlvbhJQCAESTAoIc3RvcmVNU1ASQBoHCgNNU1ASACILCgdXcml0ZXJzEgAiCgoGQWRtaW5z
+      EgAiDwoLRW5kb3JzZW1lbnQSACILCgdSZWFkZXJzEgAanwESnAEKC0FwcGxpY2F0aW9uEowBCAES
+      hwEKCHN0b3JlTVNQEnsIARoHCgNNU1ASABovCgtBbmNob3JQZWVycxIgEhYKFAoPcGVlcjAuc3Rv
+      cmUtbmV0EIs3GgZBZG1pbnMiCwoHV3JpdGVycxIAIgoKBkFkbWlucxIAIg8KC0VuZG9yc2VtZW50
+      EgAiCwoHUmVhZGVycxIAKgZBZG1pbnM=
+
