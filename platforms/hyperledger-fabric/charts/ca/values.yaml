@@ -37,6 +37,8 @@ server:
   # Provide the path for Fabric CA Server Config
   # Eg. configpath: conf/fabric-ca-server-config-default.yaml
   configpath: conf/fabric-ca-server-config-default.yaml
+  certificate:
+  certificatechain:
 
 storage:
   #Provide the storageclassname for CA
