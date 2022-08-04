@@ -535,7 +535,7 @@
             "grpc":{ "$ref":"#/definitions/shared_port"}
             },
           "required": [ "type","name","subject","grpc"],
-          "additionalProperties": false
+          "additionalProperties": true 
         },
         "fabric_service_consensus":{
           "type": "object",
